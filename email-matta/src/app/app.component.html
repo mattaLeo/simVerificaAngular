@@ -1,7 +1,12 @@
-<input type="text" name="destinatario" #newDestinatario>
+<input type="text" name="destinatario" #newDestinatario placeholder="destinatario">
 <br>
-<input type="text" name="titolo" #newTitolo>
+<input type="text" name="titolo" #newTitolo placeholder="titolo">
 <br>
-<textarea name="corpo" #newCorpo></textarea>
+<textarea name="corpo" #newCorpo placeholder="corpo"></textarea>
 <br>
 <button (click) = "sendMail(newDestinatario, newTitolo, newCorpo)">Invia</button>
+<br>
+<br>
+@for(mail of mails; track mail){
+  <app-sent-mail [mail]="mail"></app-sent-mail>
+}

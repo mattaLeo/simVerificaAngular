@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Email } from './email.model';
+import { SentMailComponent } from './sent-mail/sent-mail.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, SentMailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -14,6 +15,6 @@ export class AppComponent {
   mails: Email[] = []
 
   sendMail(dest: HTMLInputElement, title: HTMLInputElement, body: HTMLTextAreaElement){
-    this.mails.push(new Email(dest.textContent, title.textContent, body.textContent))
+    this.mails.push(new Email(dest.innerHTML, title.innerHTML, body.innerHTML))
   }
 }
