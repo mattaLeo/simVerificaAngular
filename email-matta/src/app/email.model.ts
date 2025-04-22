@@ -1,9 +1,9 @@
 export class Email{
-    destinatario: string
-    titolo: string
-    corpo: string
+    destinatario: string | null
+    titolo: string | null
+    corpo: string | null
 
-    constructor(destinatario: string, titolo: string, corpo: string){
+    constructor(destinatario: string | null, titolo: string | null, corpo: string | null){
         this.destinatario = destinatario
         this.titolo = titolo
         this.corpo = corpo
