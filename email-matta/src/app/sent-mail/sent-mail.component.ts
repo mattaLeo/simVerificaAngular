@@ -10,10 +10,14 @@ import { Email } from '../email.model';
 export class SentMailComponent implements OnInit{
   @Input() mail: Email
   show: boolean
+  speciale: boolean
+  colore: string
 
   constructor(){
     this.mail = new Email("", "", "")
     this.show = false
+    this.speciale = false
+    this.colore = "white"
   }
 
   toggleExpand(){
@@ -21,6 +25,16 @@ export class SentMailComponent implements OnInit{
       this.show = false
     }else{
       this.show = true
+    }
+  }
+
+  toggleSpecial(){
+    if(this.speciale){
+      this.speciale = false
+      this.colore = "white"
+    }else{
+      this.speciale = true
+      this.colore = "yellow"
     }
   }
 
