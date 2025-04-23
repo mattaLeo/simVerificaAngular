@@ -12,9 +12,13 @@ import { SentMailComponent } from './sent-mail/sent-mail.component';
 export class AppComponent {
   title = 'email-matta';
 
-  mails: Email[] = []
+  mails: Email[]
+
+  constructor(){
+    this.mails = []
+  }
 
   sendMail(dest: HTMLInputElement, title: HTMLInputElement, body: HTMLTextAreaElement){
-    this.mails.push(new Email(dest.innerHTML, title.innerHTML, body.innerHTML))
+    this.mails.push(new Email(dest.value, title.value, body.value))
   }
 }

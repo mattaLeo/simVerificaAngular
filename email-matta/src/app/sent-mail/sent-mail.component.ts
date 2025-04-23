@@ -11,7 +11,7 @@ export class SentMailComponent implements OnInit{
   @Input() mail: Email
 
   constructor(){
-    this.mail = new Email("leo@gmail.com", "ciao", "come stai")
+    this.mail = new Email("", "", "")
   }
 
   ngOnInit(): void {
