@@ -9,9 +9,19 @@ import { Email } from '../email.model';
 })
 export class SentMailComponent implements OnInit{
   @Input() mail: Email
+  show: boolean
 
   constructor(){
     this.mail = new Email("", "", "")
+    this.show = false
+  }
+
+  toggleExpand(){
+    if(this.show){
+      this.show = false
+    }else{
+      this.show = true
+    }
   }
 
   ngOnInit(): void {

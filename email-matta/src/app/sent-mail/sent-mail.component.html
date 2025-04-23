@@ -1,3 +1,10 @@
 <div>
-    {{mail.titolo}} - {{mail.destinatario}}
+    {{mail.titolo}} - {{mail.destinatario}}<br>
+    @if(show){
+        {{mail.corpo}}<br>
+        <button (click)="toggleExpand()">Chiudi</button>
+    }
+    @if(!show){
+        <button (click)="toggleExpand()">Espandi</button>
+    }
 </div>
